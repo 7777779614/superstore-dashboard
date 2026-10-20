@@ -1,6 +1,6 @@
 # Global Superstore — Profit & Discount Dashboard
 
-**Team:** &lt;填你的组号/名字&gt;
+**Team:** &lt;王镱舒&gt;
 **App URL:** &lt;部署后填&gt;
 **Dataset:** [Global Superstore (Kaggle)](https://www.kaggle.com/datasets/vivek468/superstore-dataset-final)
 
@@ -79,14 +79,5 @@ On the deployed app, the caption line reads:
 
 ---
 
-## How to run locally
-
-```bash
-uv init superstore-dashboard
-cd superstore-dashboard
-uv add streamlit pandas plotly
-# put app.py and superstore.csv in this folder
-streamlit run app.py
-```
 
 Then push to your own public GitHub repo and deploy on [Streamlit Community Cloud](https://share.streamlit.io/), set Python version to 3.14 under Advanced settings.
