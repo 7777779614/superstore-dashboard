@@ -1,0 +1,4 @@
+# requirements.txt — Streamlit 会自动安装
+streamlit>=1.40
+pandas
+plotly
