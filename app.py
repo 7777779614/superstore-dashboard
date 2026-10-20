@@ -1,6 +1,6 @@
 """
 Global Superstore — Regional Sales Manager Dashboard
-Team: <你的组号/名字>
+Team: <Group 10 王镱舒>
 """
 import pandas as pd
 import plotly.express as px
@@ -22,6 +22,7 @@ df = load_data()
 
 # ---------- 2. 标题 + 一句话说明 ----------
 st.title("Global Superstore · Sales & Profit Dashboard")
+
 st.caption(
     "For the Regional Sales Manager — spot high-sales, low-margin product lines "
     "and decide which discounts to cut.  Data: Jan 2011 – Dec 2014, Kaggle snapshot.  "
@@ -62,9 +63,9 @@ k4.metric("Loss-making orders", f"{loss_orders:,}")
 st.divider()
 
 # ---------- 5. 中间图表 1：按子品类看利润（找出"卖得多却亏钱"的）----------
-st.subheader("Profit by Sub-Category — which lines drag us down?")
+st.subheader("Profit by Sub.Category — which lines drag us down?")
 sub = (
-    d.groupby("Sub-Category")
+    d.groupby("Sub.Category")
     .agg(Sales=("Sales", "sum"), Profit=("Profit", "sum"))
     .reset_index()
 )
@@ -74,7 +75,7 @@ sub = sub.sort_values("Profit")
 fig1 = px.bar(
     sub,
     x="Profit",
-    y="Sub-Category",
+    y="Sub.Category",
     orientation="h",
     color="Profit",
     color_continuous_scale="RdYlGn",
@@ -110,7 +111,7 @@ st.plotly_chart(fig2, use_container_width=True)
 
 # ---------- 7. 底部：明细表格（想钻进去的人看）----------
 with st.expander("Show underlying orders (last 200)"):
-    cols = ["Order.Date", "Order.ID", "Region", "Category", "Sub-Category",
+    cols = ["Order.Date", "Order.ID", "Region", "Category", "Sub.Category",
             "Customer.Name", "Sales", "Discount", "Profit"]
     st.dataframe(d[cols].sort_values("Order.Date", ascending=False).head(200),
                  use_container_width=True, height=300)
