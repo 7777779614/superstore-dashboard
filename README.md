@@ -80,4 +80,3 @@ On the deployed app, the caption line reads:
 ---
 
 
-Then push to your own public GitHub repo and deploy on [Streamlit Community Cloud](https://share.streamlit.io/), set Python version to 3.14 under Advanced settings.
